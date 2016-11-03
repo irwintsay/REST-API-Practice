@@ -1,0 +1,25 @@
+{
+  "name": "rest-api-practice",
+  "version": "1.0.0",
+  "description": "RESTful Routing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irwintsay/REST-API-Practice.git"
+  },
+  "author": "Irwin Tsay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irwintsay/REST-API-Practice/issues"
+  },
+  "homepage": "https://github.com/irwintsay/REST-API-Practice#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
