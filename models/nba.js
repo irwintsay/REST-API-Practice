@@ -12,6 +12,19 @@ const nbaAll = (req, res, next) => {
     });
 };
 
+const nbaOne = (req, res, next) => {
+  db.one('SELECT * FROM players WHERE id = $1', [req.params.id])
+    .then((data) => {
+      console.log(data);
+      res.data = data;
+      next();
+    })
+    .catch((error) => {
+      next(error);
+    });
+};
+
 module.exports = {
-  nbaAll
+  nbaAll,
+  nbaOne
 }

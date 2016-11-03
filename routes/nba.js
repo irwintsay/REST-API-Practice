@@ -1,7 +1,11 @@
-const router = require('express').Router();
+const NBARouter = require('express').Router();
 
-router.get('/', (req, res) => {
+NBARouter.get('/', (req, res) => {
   res.render('nba/index');
 });
 
-module.exports = router;
+NBARouter.get('/:id', (req, res) => {
+  res.render('nba/show');
+});
+
+module.exports = NBARouter;

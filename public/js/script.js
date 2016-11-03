@@ -3,8 +3,8 @@ $(() => {
   
   const ajaxNBA = (method, url) => {
     return $.ajax({
-      method: 'GET',
-      url: '/api/nba/'
+      method: method,
+      url: url
     });
   };
 
