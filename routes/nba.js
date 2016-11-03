@@ -5,7 +5,9 @@ NBARouter.get('/', (req, res) => {
 });
 
 NBARouter.get('/:id', (req, res) => {
-  res.render('nba/show');
+  res.render('nba/show', {
+    id: req.params.id
+  });
 });
 
 module.exports = NBARouter;
