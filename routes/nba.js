@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const { nbaAll } = require('../models/nba');
 
-router.get('/', nbaAll, (req, res) => {
-  res.json(res.data);
+router.get('/', (req, res) => {
+  res.render('nba/index');
 });
 
 module.exports = router;
