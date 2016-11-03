@@ -1,6 +1,6 @@
 const db = require('../lib/dbConnect.js');
 
-const getAll = (req, res, next) => {
+const nbaAll = (req, res, next) => {
   db.any('SELECT * FROM players')
     .then((data) => {
       console.log('GOT DATA');
@@ -13,5 +13,5 @@ const getAll = (req, res, next) => {
 };
 
 module.exports = {
-  getAll
+  nbaAll
 }

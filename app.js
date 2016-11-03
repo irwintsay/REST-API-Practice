@@ -9,7 +9,7 @@ const nbaRouter         = require('./routes/nba')
 
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname + 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routing
 app.use('/', indexRouter);

@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { getAll } = require('../models/nba');
+const { nbaAll } = require('../models/nba');
 
-router.get('/', getAll, (req, res) => {
+router.get('/', nbaAll, (req, res) => {
   res.json(res.data);
 });
 
