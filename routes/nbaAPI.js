@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { nbaAll,
-        nbaOne } = require('../models/nba');
+        nbaOne,
+        nbaEdit } = require('../models/nba');
 
 
 router.get('/', nbaAll, (req, res) => {
