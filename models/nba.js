@@ -24,6 +24,10 @@ const nbaOne = (req, res, next) => {
     });
 };
 
+const nbaEdit = (req, res, next) => {
+  // Edit player service
+}
+
 module.exports = {
   nbaAll,
   nbaOne
