@@ -34,4 +34,5 @@ const appendOnePlayer = (player) => {
   playerBio.append($('<h4>').text('Age: ' + player.age));
   playerBio.append($('<h4>').text('Games: ' + player.games));
   playerBio.append($('<h4>').text('Points: ' + player.points));
+  playerBio.append($('<a>').attr('href', '/nba/' + player.id + '/edit').text('Edit'));
 };

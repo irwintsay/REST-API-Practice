@@ -10,4 +10,10 @@ NBARouter.get('/:id', (req, res) => {
   });
 });
 
+NBARouter.get('/:id/edit', (req, res) => {
+  res.render('nba/edit', {
+    id: req.params.id
+  });
+});
+
 module.exports = NBARouter;
