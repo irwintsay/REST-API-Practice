@@ -18,6 +18,12 @@ const getOnePlayer = (id) => {
   });
 };
 
+const editOnePlayer = (id) => {
+  ajaxNBA('GET', '/api/nba/' + id).done((data) => {
+    appendEditPlayer(data);
+  });
+}
+
 const appendAllPlayers = (playerData) => {
   const playerList = $('.player-list');
   playerData.forEach((player) => {
@@ -36,3 +42,18 @@ const appendOnePlayer = (player) => {
   playerBio.append($('<h4>').text('Points: ' + player.points));
   playerBio.append($('<a>').attr('href', '/nba/' + player.id + '/edit').text('Edit'));
 };
+
+const appendEditPlayer = (player) => {
+  const playerBio = $('.player-bio');
+  const editForm = $('<form>').attr({
+    action: '/api/nba/' + player.id + '/edit',
+    method: 'PUT'
+  });
+  editForm.append($('<input>').attr('name', 'player[name]').val(player.name));
+  editForm.append($('<input>').attr('name', 'player[team]').val(player.team));
+  editForm.append($('<input>').attr('name', 'player[age]').val(player.age));
+  editForm.append($('<input>').attr('name', 'player[games]').val(player.games));
+  editForm.append($('<input>').attr('name', 'player[points]').val(player.points));
+  editForm.append($('<input>').attr('type', 'submit'));
+  playerBio.append(editForm);
+}
