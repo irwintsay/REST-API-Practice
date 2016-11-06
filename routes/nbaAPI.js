@@ -14,7 +14,7 @@ router.get('/:id', nbaOne, (req, res) => {
 
 router.put('/:id', nbaEdit, (req, res) => {
   console.log('Put Route hit');
-  res.redirect('../../');
+  res.redirect('/');
 });
 
 module.exports = router;

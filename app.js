@@ -11,7 +11,7 @@ const nbaRouter         = require('./routes/nba');
 const nbaAPIRouter      = require('./routes/nbaAPI');
 
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger('dev'));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));

@@ -29,9 +29,8 @@ const nbaEdit = (req, res, next) => {
   console.log('Edit Route');
   console.log(req.body.player);
   db.none('UPDATE players SET name = $1, team = $2, age = $3, games = $4, points = $5 WHERE id = $6',
-          [req.body.player.name, req.body.player.team, req.body.player.age, req.body.player.games, req.body.player.points, req.body.player.id])
-    .then((data) => {
-      console.log(data);
+          [req.body.player.name, req.body.player.team, req.body.player.age, req.body.player.games, req.body.player.points, req.params.id])
+    .then(() => {
       next();
     });
 };
