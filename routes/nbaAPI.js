@@ -12,8 +12,9 @@ router.get('/:id', nbaOne, (req, res) => {
   res.json(res.data);
 });
 
-router.put('/:id/edit', nbaEdit, (req, res) => {
-  res.redirect('/nba/' + req.params.id);
+router.put('/:id', nbaEdit, (req, res) => {
+  console.log('Put Route hit');
+  res.redirect('../../');
 });
 
 module.exports = router;

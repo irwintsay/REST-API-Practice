@@ -46,7 +46,7 @@ const appendOnePlayer = (player) => {
 const appendEditPlayer = (player) => {
   const playerBio = $('.player-bio');
   const editForm = $('<form>').attr({
-    action: '/api/nba/' + player.id + '/edit',
+    action: '/api/nba/' + player.id,
     method: 'PUT'
   });
   editForm.append($('<input>').attr('name', 'player[name]').val(player.name));
