@@ -1,6 +1,7 @@
 const express           = require('express');
 const bodyParser        = require('body-parser');
 const logger            = require('morgan');
+const methodOverride    = require('method-override');
 const path              = require('path');
 
 const app               = express();
@@ -11,6 +12,7 @@ const nbaAPIRouter      = require('./routes/nbaAPI');
 
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routing
