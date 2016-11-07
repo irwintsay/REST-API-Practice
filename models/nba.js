@@ -26,7 +26,7 @@ const nbaOne = (req, res, next) => {
 
 const nbaEdit = (req, res, next) => {
   // Edit player service
-  console.log('Edit Route');
+  console.log('Edit Service');
   console.log(req.body.player);
   db.none('UPDATE players SET name = $1, team = $2, age = $3, games = $4, points = $5 WHERE id = $6',
           [req.body.player.name, req.body.player.team, req.body.player.age, req.body.player.games, req.body.player.points, req.params.id])
@@ -36,7 +36,7 @@ const nbaEdit = (req, res, next) => {
 };
 
 const nbaDelete = (req, res, next) => {
-  console.log('Delete Route');
+  console.log('Delete Service');
   db.none('DELETE FROM players WHERE id = $1', [req.params.id])
     .then(() => {
       next();

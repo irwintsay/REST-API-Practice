@@ -21,8 +21,9 @@ const getOnePlayer = (id) => {
 const editOnePlayer = (id) => {
   ajaxNBA('GET', '/api/nba/' + id).done((data) => {
     appendEditPlayer(data);
+    appendDeletePlayer(data);
   });
-}
+};
 
 const appendAllPlayers = (playerData) => {
   const playerList = $('.player-list');
@@ -46,7 +47,7 @@ const appendOnePlayer = (player) => {
 const appendEditPlayer = (player) => {
   const playerBio = $('.player-bio');
   const editForm = $('<form>').attr({
-    action: '/api/nba/' + player.id +'?_method=PUT',
+    action: '/api/nba/' + player.id + '?_method=PUT',
     method: 'POST'
   });
   editForm.append($('<input>').attr('name', 'player[name]').val(player.name));
@@ -56,4 +57,18 @@ const appendEditPlayer = (player) => {
   editForm.append($('<input>').attr('name', 'player[points]').val(player.points));
   editForm.append($('<input>').attr('type', 'submit'));
   playerBio.append(editForm);
-}
+};
+
+const appendDeletePlayer = (player) => {
+  const playerBio = $('.player-bio');
+  const deleteForm = $('<form>').attr({
+    action: '/api/nba/' + player.id + '?_method=DELETE',
+    method: 'POST'
+  });
+  deleteForm.append($('<input>')
+            .attr({
+              'type': 'submit',
+              'value': 'Delete'
+            }));
+  playerBio.append(deleteForm);
+};

@@ -14,12 +14,12 @@ router.get('/:id', nbaOne, (req, res) => {
 });
 
 router.put('/:id', nbaEdit, (req, res) => {
-  console.log('Put Route hit');
+  console.log('Put API Route');
   res.redirect('/nba/' + req.params.id);
 });
 
 router.delete('/:id', nbaDelete, (req, res) => {
-  console.log('Delete Route hit');
+  console.log('Delete API Route');
   res.redirect('/');
 });
 
