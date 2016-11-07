@@ -35,8 +35,17 @@ const nbaEdit = (req, res, next) => {
     });
 };
 
+const nbaDelete = (req, res, next) => {
+  console.log('Delete Route');
+  db.none('DELETE FROM players WHERE id = $1', [req.params.id])
+    .then(() => {
+      next();
+    });
+};
+
 module.exports = {
   nbaAll,
   nbaOne,
-  nbaEdit
+  nbaEdit,
+  nbaDelete
 }

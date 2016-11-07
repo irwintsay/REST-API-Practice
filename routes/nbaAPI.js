@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { nbaAll,
         nbaOne,
-        nbaEdit } = require('../models/nba');
+        nbaEdit,
+        nbaDelete } = require('../models/nba');
 
 
 router.get('/', nbaAll, (req, res) => {
@@ -14,6 +15,11 @@ router.get('/:id', nbaOne, (req, res) => {
 
 router.put('/:id', nbaEdit, (req, res) => {
   console.log('Put Route hit');
+  res.redirect('/nba/' + req.params.id);
+});
+
+router.delete('/:id', nbaDelete, (req, res) => {
+  console.log('Delete Route hit');
   res.redirect('/');
 });
 
