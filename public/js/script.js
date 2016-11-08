@@ -6,8 +6,8 @@ const ajaxNBA = (method, url) => {
   });
 };
 
-const fetchNBA = (method) => {
-  return fetch(method);
+const fetchNBA = (method, url) => {
+  return fetch(url, { method });
 };
 
 const getAllPlayers = () => {
@@ -23,9 +23,11 @@ const getAllPlayers = () => {
 // };
 
 const getOnePlayer = (id) => {
-  fetchNBA('/api/nba/' + id)
+  fetchNBA('GET', '/api/nba/' + id)
     .then(r => r.json())
     .then(data => {
+      console.log('Fetch working');
+      console.log(data);
       appendOnePlayer(data);
     });
 };
