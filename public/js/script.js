@@ -6,16 +6,28 @@ const ajaxNBA = (method, url) => {
   });
 };
 
+const fetchNBA = (method) => {
+  return fetch(method);
+};
+
 const getAllPlayers = () => {
   ajaxNBA('GET', '/api/nba').done((data) => {
     appendAllPlayers(data);
   });
 };
 
+// const getOnePlayer = (id) => {
+//   ajaxNBA('GET', '/api/nba/' + id).done((data) => {
+//     appendOnePlayer(data);
+//   });
+// };
+
 const getOnePlayer = (id) => {
-  ajaxNBA('GET', '/api/nba/' + id).done((data) => {
-    appendOnePlayer(data);
-  });
+  fetchNBA('/api/nba/' + id)
+    .then(r => r.json())
+    .then(data => {
+      appendOnePlayer(data);
+    });
 };
 
 const editOnePlayer = (id) => {
