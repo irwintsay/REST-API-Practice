@@ -1,5 +1,7 @@
 const db = require('../lib/dbConnect.js');
 
+
+// Get all NBA players
 const nbaAll = (req, res, next) => {
   db.any('SELECT * FROM players')
     .then((data) => {
@@ -12,6 +14,7 @@ const nbaAll = (req, res, next) => {
     });
 };
 
+// Get one NBA player by id
 const nbaOne = (req, res, next) => {
   db.one('SELECT * FROM players WHERE id = $1', [req.params.id])
     .then((data) => {
@@ -24,6 +27,7 @@ const nbaOne = (req, res, next) => {
     });
 };
 
+// Edit one NBA player by id
 const nbaEdit = (req, res, next) => {
   // Edit player service
   console.log('Edit Service');
@@ -35,6 +39,7 @@ const nbaEdit = (req, res, next) => {
     });
 };
 
+// Delete one NBA player by id
 const nbaDelete = (req, res, next) => {
   console.log('Delete Service');
   db.none('DELETE FROM players WHERE id = $1', [req.params.id])
@@ -43,6 +48,7 @@ const nbaDelete = (req, res, next) => {
     });
 };
 
+// Export stuff
 module.exports = {
   nbaAll,
   nbaOne,

@@ -6,10 +6,12 @@ const { nbaAll,
 
 
 router.get('/', nbaAll, (req, res) => {
+  console.log('All API Route');
   res.json(res.data);
 });
 
 router.get('/:id', nbaOne, (req, res) => {
+  console.log('One API Route');
   res.json(res.data);
 });
 

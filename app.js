@@ -21,6 +21,15 @@ app.use('/', indexRouter);
 app.use('/nba', nbaRouter);
 app.use('/api/nba', nbaAPIRouter);
 
+
+// ===== For Review Session =====
+
+const homeRouter = require('./routes/home');
+app.use('/home', homeRouter);
+
+// ==============================
+
+
 app.listen(port, (req, res) => {
   console.log('Power level over:', port);
 });
