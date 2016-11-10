@@ -16,6 +16,7 @@ const nbaAll = (req, res, next) => {
 
 // Get one NBA player by id
 const nbaOne = (req, res, next) => {
+  
   db.one('SELECT * FROM players WHERE id = $1', [req.params.id])
     .then((data) => {
       console.log('Retrieved 1 player successfully');
